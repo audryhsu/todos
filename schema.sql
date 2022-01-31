@@ -1,4 +1,9 @@
 
+CREATE TABLE IF NOT EXISTS users (
+  username text PRIMARY key,
+  password text not null
+);
+
 CREATE TABLE IF NOT EXISTS todolists (
   id SERIAL PRIMARY KEY,
   title varchar(100) unique not null,
@@ -21,9 +26,4 @@ CREATE TABLE IF NOT EXISTS todos (
     references users (username)
     on delete cascade
 
-);
-
-CREATE TABLE IF NOT EXISTS users (
-  username text PRIMARY key,
-  password text not null
 );
